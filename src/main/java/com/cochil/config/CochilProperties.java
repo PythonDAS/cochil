@@ -16,4 +16,5 @@ import java.util.Map;
 public class CochilProperties {
 
     private Map<String, Map<String, String>> servers = new HashMap<>();
+    private String env;
 }

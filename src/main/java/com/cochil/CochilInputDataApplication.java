@@ -1,6 +1,8 @@
 package com.cochil;
 
 import com.cochil.config.CochilProperties;
+import com.cochil.domain.ingredient.Ingredient;
+import com.cochil.service.IngredientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class CochilInputDataApplication extends WebMvcConfigurerAdapter implemen
 
     @Autowired
     private CochilProperties props;
+    @Autowired
+    private IngredientService service;
 
     public static void main(String[] args) {
         SpringApplication.run(CochilInputDataApplication.class, args);
@@ -34,9 +38,19 @@ public class CochilInputDataApplication extends WebMvcConfigurerAdapter implemen
         int port = Integer.parseInt(mongoInfo.get("port"));
         String database = mongoInfo.get("database");
 
-        logger.info("Host: {}", host);
-        logger.info("Port: {}", port);
-        logger.info("Database: {}", database);
+        logger.debug("Mongo Host: {}", host);
+        logger.debug("Mongo Port: {}", port);
+        logger.debug("Mongo Database: {}", database);
+
+
+        /**
+         * test data.
+         */
+        Ingredient ingredient = new Ingredient();
+        ingredient.setName("실리카겔");
+        ingredient.setExplanation("치약성분");
+
+        service.saveIngredient(ingredient);
     }
 
     /**

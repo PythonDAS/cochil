@@ -1,4 +1,4 @@
-package com.cochil.service;
+package com.cochil.persistance;
 
 import com.cochil.config.CochilProperties;
 import com.mongodb.Mongo;
@@ -6,13 +6,17 @@ import com.mongodb.MongoClient;
 import com.mongodb.WriteConcern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.util.Map;
 
 /**
  * Created by donghoon on 2016. 5. 22..
  */
+@Configuration
+@EnableMongoRepositories
 public class MongoConfig {
     @Autowired
     private CochilProperties cochilProperties;
