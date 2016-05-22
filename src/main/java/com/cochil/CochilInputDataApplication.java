@@ -7,11 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Map;
 
+@EnableWebMvc
 @SpringBootApplication
-public class CochilInputDataApplication implements CommandLineRunner {
+public class CochilInputDataApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
 
     private Logger logger = LoggerFactory.getLogger(CochilInputDataApplication.class);
 
@@ -33,5 +37,17 @@ public class CochilInputDataApplication implements CommandLineRunner {
         logger.info("Host: {}", host);
         logger.info("Port: {}", port);
         logger.info("Database: {}", database);
+    }
+
+    /**
+     * static folder 이하에 있는 정적자원들 인식.
+     *
+     * @param registry
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        if (!registry.hasMappingForPattern("/static/**")) {
+            registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        }
     }
 }
