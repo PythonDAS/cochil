@@ -6,10 +6,70 @@
     <!-- Bootstrap core ` -->
     <link th:href="@{/static/node_modules/admin-lte/bootstrap/css/bootstrap.min.css}"
           href="/static/node_modules/admin-lte/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link th:href="@{/static/node_modules/admin-lte/dist/css/AdminLTE.min.css}"
+          href="/static/node_modules/admin-lte/dist/css/AdminLTE.min.css" rel="stylesheet"/>
+    <link th:href="@{/static/node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css}"
+          href="/static/node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css" rel="stylesheet"/>
+    <link th:href="@{/static/node_modules/font-awesome/css/font-awesome.min.css}"
+          href="/static/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
-<body>
-<div class="container">
-    <h1>테스트</h1>
+<body class="skin-blue-light sidebar-mini">
+<div class="wrapper">
+    <div th:replace="fragments/header :: header">&nbsp;</div>  <!-- main header -->
+    <div th:replace="fragments/left_sidebar :: left_sidebar">&nbsp;</div>  <!-- main sidebar -->
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                Cochil
+                <small>Ingredient Input Form2</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#" class="active">Forms</a></li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Ingredient Input Form</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="ingredientName">Ingredient Name</label>
+                                    <input type="text" class="form-control" id="ingredientName"
+                                           placeholder="Enter Ingredient Name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Explanation</label>
+                                    <textarea class="form-control" rows="10" placeholder="Enter Explanation"></textarea>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer th:replace="fragments/footer :: 'footer'">&copy;</footer>
 </div>
+
+<script th:src="@{/static/node_modules/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js}"
+        src="/static/node_modules/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script th:src="@{/static/node_modules/admin-lte/bootstrap/js/bootstrap.min.js}"
+        src="/static/node_modules/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<script th:src="@{/static/node_modules/admin-lte/dist/js/app.min.js}"
+        src="/static/node_modules/admin-lte/dist/js/app.min.js"></script>
 </body>
 </html>
