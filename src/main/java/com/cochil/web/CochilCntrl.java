@@ -13,4 +13,9 @@ public class CochilCntrl {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("save-ingredient")
+    public void saveIngredient() {
+
+    }
 }
