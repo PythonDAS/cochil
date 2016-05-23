@@ -3,6 +3,6 @@
  */
 $(document).ready(function () {
     $("#submit").on("click", function () {
-        alert("test");
+        console.log("성분 저장.");
     });
 });

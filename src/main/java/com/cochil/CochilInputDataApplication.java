@@ -47,8 +47,8 @@ public class CochilInputDataApplication extends WebMvcConfigurerAdapter implemen
          * test data.
          */
         Ingredient ingredient = new Ingredient();
-        ingredient.setName("실리카겔");
-        ingredient.setExplanation("치약성분");
+        ingredient.setName("테스트");
+        ingredient.setExplanation("테스트");
 
         service.saveIngredient(ingredient);
     }

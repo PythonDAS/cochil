@@ -5,4 +5,7 @@ servers:
     database: cochil
 server:
   port: 8080
-env: test #test, dev
+env: dev #test, dev
+spring:
+  thymeleaf:
+    cache: false
