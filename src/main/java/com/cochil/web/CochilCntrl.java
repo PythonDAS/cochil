@@ -31,7 +31,10 @@ public class CochilCntrl {
     }
 
     @RequestMapping("/inputData")
-    public String inputData() {
+    public String inputData(Model model) {
+        String count = count();
+        model.addAttribute("count", count);
+        logger.info("ingredient count: {}", count);
         return "input";
     }
 
@@ -52,6 +55,13 @@ public class CochilCntrl {
         BeanUtils.copyProperties(form, ingredient);
 
         return service.save(ingredient);
+    }
+
+
+    @RequestMapping(value = "/ingredient/count", method = RequestMethod.POST)
+    @ResponseBody
+    public String count() {
+        return "Count: " + service.count();
     }
 
 }

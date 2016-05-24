@@ -36,5 +36,10 @@ public class IngredientService implements IIngredientService {
         return repository.findAll(pageable);
     }
 
+    @Override
+    public long count() {
+        return repository.count();
+    }
+
 
 }

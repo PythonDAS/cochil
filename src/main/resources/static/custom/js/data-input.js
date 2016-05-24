@@ -20,6 +20,15 @@ $(document).ready(function () {
                 $("#ingredientName").val("");
                 $("#ingredientExplanation").val("");
                 console.log(response);
+
+                $.ajax({
+                    type: "post",
+                    url: "/ingredient/count",
+                    success: function (response) {
+                        $("#ingredientCount").text(response);
+                        console.log(response);
+                    }
+                })
             }
         })
 
