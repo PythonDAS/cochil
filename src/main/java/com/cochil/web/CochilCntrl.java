@@ -46,7 +46,7 @@ public class CochilCntrl {
         Ingredient ingredient = new Ingredient();
         BeanUtils.copyProperties(form, ingredient);
 
-        service.saveIngredient(ingredient);
+        service.save(ingredient);
 
         return "redirect:/";
     }
