@@ -11,17 +11,10 @@ import java.util.List;
  * Created by donghoon on 2016. 5. 22..
  */
 @Data
-@Document(collection = "products")
-public class Toothpaste implements Product {
+public class ProductForm {
 
-    @Id
-    private String _id;
-    private ProductCnst productCode;
+    private ProductCnst productCode; // 0: 치약 1: 샴푸
     private String name;
     private List<Ingredient> ingredientList;
-
-    public Toothpaste() {
-        this.productCode = ProductCnst.TOOTHPASTE;
-    }
 
 }

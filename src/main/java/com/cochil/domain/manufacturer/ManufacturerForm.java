@@ -8,11 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by donghoon on 2016. 5. 22..
  */
 @Data
-@Document(collection = "manufacturers")
-public class Manufacturer {
+public class ManufacturerForm {
 
-    @Id
-    private String id;
     private int nationalityCode;  // 0: 국내, 1: 해외.
     private String name;
 }
