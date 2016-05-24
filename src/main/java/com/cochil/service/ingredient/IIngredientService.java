@@ -12,5 +12,5 @@ public interface IIngredientService {
 
     Page<Ingredient> findAll(Pageable pageable);
 
-    long count();
+    Long count();
 }

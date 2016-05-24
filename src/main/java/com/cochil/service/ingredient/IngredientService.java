@@ -37,7 +37,7 @@ public class IngredientService implements IIngredientService {
     }
 
     @Override
-    public long count() {
+    public Long count() {
         return repository.count();
     }
 
