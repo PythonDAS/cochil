@@ -1,4 +1,4 @@
-package com.cochil.service;
+package com.cochil.service.ingredient;
 
 import com.cochil.domain.ingredient.Ingredient;
 import org.springframework.data.domain.Page;

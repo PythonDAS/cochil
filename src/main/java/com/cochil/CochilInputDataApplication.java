@@ -2,7 +2,7 @@ package com.cochil;
 
 import com.cochil.config.CochilProperties;
 import com.cochil.domain.ingredient.Ingredient;
-import com.cochil.service.IngredientService;
+import com.cochil.service.ingredient.IngredientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

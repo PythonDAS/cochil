@@ -1,4 +1,4 @@
-package com.cochil.service;
+package com.cochil.service.ingredient;
 
 import com.cochil.domain.ingredient.Ingredient;
 import com.cochil.persistance.IngredientRepository;
@@ -7,8 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 /**
  * Created by donghoon on 2016. 5. 22..
