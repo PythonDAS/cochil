@@ -28,7 +28,7 @@ public class CochilCntrl {
 
     @RequestMapping("/")
     public String index() {
-        return "index";
+        return "input";
     }
 
     @ModelAttribute
@@ -36,11 +36,11 @@ public class CochilCntrl {
         return new IngredientForm();
     }
 
-    @RequestMapping(value = "/ingredient/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/ingredient/save", method = RequestMethod.POST)
     public String create(@Validated IngredientForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
             logger.info("IngredientForm data has error...");
-            return "index";
+            return "redirect:/";
         }
 
         Ingredient ingredient = new Ingredient();

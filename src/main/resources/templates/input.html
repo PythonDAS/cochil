@@ -22,7 +22,7 @@
         <section class="content-header">
             <h1>
                 Cochil
-                <small>성분 입력 폼</small>
+                <small>데이터 입력 폼</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -39,7 +39,7 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" th:action="@{/ingredient/create}" th:object="${ingredientForm}"
+                        <form role="form" th:action="@{/ingredient/save}" th:object="${ingredientForm}"
                               method="post">
                             <div class="box-body">
                                 <div class="form-group">
