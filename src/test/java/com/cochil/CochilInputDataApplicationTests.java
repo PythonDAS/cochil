@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = CochilInputDataApplication.class)
+@SpringApplicationConfiguration(classes = CochilApplication.class)
 @WebAppConfiguration
 public class CochilInputDataApplicationTests {
 

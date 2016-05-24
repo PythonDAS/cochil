@@ -17,9 +17,9 @@ import java.util.Map;
 
 @EnableWebMvc
 @SpringBootApplication
-public class CochilInputDataApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
+public class CochilApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
 
-    private Logger logger = LoggerFactory.getLogger(CochilInputDataApplication.class);
+    private Logger logger = LoggerFactory.getLogger(CochilApplication.class);
 
     @Autowired
     private CochilProperties props;
@@ -27,7 +27,7 @@ public class CochilInputDataApplication extends WebMvcConfigurerAdapter implemen
     private IngredientService service;
 
     public static void main(String[] args) {
-        SpringApplication.run(CochilInputDataApplication.class, args);
+        SpringApplication.run(CochilApplication.class, args);
     }
 
     @Override

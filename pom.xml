@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cochil</groupId>
-    <artifactId>cochil-inpiut-data</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>cochil</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>cochil-input-data</name>
-    <description>To collect data, cochil data input project.</description>
+    <name>cochil</name>
+    <description>Cochil project.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -51,7 +51,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

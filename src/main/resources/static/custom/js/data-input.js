@@ -3,8 +3,6 @@
  */
 $(document).ready(function () {
     $("#submit").on("click", function () {
-        console.log("성분 저장.");
-
         var ingredientName = $("#ingredientName").val();
         var ingredientExplanation = $("#ingredientExplanation").val();
 
@@ -17,6 +15,8 @@ $(document).ready(function () {
                 explanation: ingredientExplanation
             },
             success: function (response) {
+                console.log("성분 저장 성공.");
+
                 $("#ingredientName").val("");
                 $("#ingredientExplanation").val("");
                 console.log(response);
@@ -29,6 +29,14 @@ $(document).ready(function () {
                         console.log(response);
                     }
                 })
+            },
+            error: function (error) {
+                console.log("성분 저장 실패.");
+                console.log(error);
+                if (error.responseText === "") {
+                    $("#ingredientName").attr("placeholder", "이름은 비어 있으면 안됩니다.");
+                    $("#ingredientExplanation").attr("placeholder", "내용은 비어 있으면 안됩니다.");
+                }
             }
         })
 
