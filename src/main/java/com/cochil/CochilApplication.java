@@ -41,16 +41,6 @@ public class CochilApplication extends WebMvcConfigurerAdapter implements Comman
         logger.debug("Mongo Host: {}", host);
         logger.debug("Mongo Port: {}", port);
         logger.debug("Mongo Database: {}", database);
-
-
-        /**
-         * test data.
-         */
-        Ingredient ingredient = new Ingredient();
-        ingredient.setName("테스트");
-        ingredient.setExplanation("테스트");
-
-        service.save(ingredient);
     }
 
     /**
