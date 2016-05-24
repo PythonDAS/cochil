@@ -39,24 +39,17 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" th:action="@{/ingredient/save}" th:object="${ingredientForm}"
-                              method="post">
+                        <form role="form" action="#">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="ingredientName">이름</label>
-                                    <input type="text" class="form-control" id="ingredientName" th:field="*{name}"
-                                           th:errorclass="error-input"
+                                    <input type="text" class="form-control" id="ingredientName"
                                            placeholder="성분 이름을 입력하세요."/>
-                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
-                                          class="error-messages">error!</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="ingredientExplanation">설명</label>
                                     <textarea class="form-control" rows="10" id="ingredientExplanation"
-                                              th:field="*{explanation}" th:errorclass="error-input"
                                               placeholder="성분 설명을 입력하세요."></textarea>
-                                    <span th:if="${#fields.hasErrors('explanation')}" th:errors="*{explanation}"
-                                          class="error-messages">error!</span>
                                 </div>
                             </div>
                             <!-- /.box-body -->
@@ -79,7 +72,7 @@
         src="../static/node_modules/admin-lte/bootstrap/js/bootstrap.min.js"></script>
 <script th:src="@{/static/node_modules/admin-lte/dist/js/app.min.js}"
         src="../static/node_modules/admin-lte/dist/js/app.min.js"></script>
-<script th:src="@{/static/custom/js/ingredient.js}"
-        src="../static/custom/js/ingredient.js"></script>
+<script th:src="@{/static/custom/js/data-input.js}"
+        src="../static/custom/js/data-input.js"></script>
 </body>
 </html>

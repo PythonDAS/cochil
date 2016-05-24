@@ -24,11 +24,11 @@ public class IngredientService implements IIngredientService {
      * @param ingredient
      */
     @Override
-    public void save(Ingredient ingredient) {
+    public Ingredient save(Ingredient ingredient) {
         if (ingredient == null)
             throw new NullPointerException("ingredient is null...");
 
-        repository.save(ingredient);
+        return repository.save(ingredient);
     }
 
     @Override

@@ -11,9 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by donghoon on 2016. 5. 22..
@@ -27,7 +25,13 @@ public class CochilCntrl {
     private IngredientService service;
 
     @RequestMapping("/")
+    @ResponseBody
     public String index() {
+        return "Hello, Cochil!";
+    }
+
+    @RequestMapping("/inputData")
+    public String inputData() {
         return "input";
     }
 
@@ -37,18 +41,17 @@ public class CochilCntrl {
     }
 
     @RequestMapping(value = "/ingredient/save", method = RequestMethod.POST)
-    public String create(@Validated IngredientForm form, BindingResult result, Model model) {
+    @ResponseBody
+    public Ingredient create(@Validated IngredientForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
             logger.info("IngredientForm data has error...");
-            return "redirect:/";
+            return null;
         }
 
         Ingredient ingredient = new Ingredient();
         BeanUtils.copyProperties(form, ingredient);
 
-        service.save(ingredient);
-
-        return "redirect:/";
+        return service.save(ingredient);
     }
 
 }
