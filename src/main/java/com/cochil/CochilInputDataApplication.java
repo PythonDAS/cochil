@@ -50,7 +50,7 @@ public class CochilInputDataApplication extends WebMvcConfigurerAdapter implemen
         ingredient.setName("테스트");
         ingredient.setExplanation("테스트");
 
-        service.saveIngredient(ingredient);
+        service.save(ingredient);
     }
 
     /**

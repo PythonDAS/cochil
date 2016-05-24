@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Ingredient {
 
     @Id
-    private String _id;
+    private String id;
     private String name;
     private String explanation;
 
