@@ -28,7 +28,7 @@ public class CochilCntrl {
 
     @RequestMapping("/inputData")
     public String inputData(Model model) {
-        String count = service.count().toString();
+        String count = "Count: " + service.count().toString();
         model.addAttribute("count", count);
         logger.info("ingredient count: {}", count);
         return "input";
