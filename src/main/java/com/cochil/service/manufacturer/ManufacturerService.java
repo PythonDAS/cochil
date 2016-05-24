@@ -5,10 +5,12 @@ import com.cochil.persistance.ManufacturerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by donghoon on 2016. 5. 24..
  */
+@Service
 public class ManufacturerService implements IManufacturerService {
 
     @Autowired
@@ -20,15 +22,20 @@ public class ManufacturerService implements IManufacturerService {
      * @param manufacturer
      */
     @Override
-    public void save(Manufacturer manufacturer) {
+    public Manufacturer save(Manufacturer manufacturer) {
         if (manufacturer == null)
             throw new NullPointerException("manufacturer is null...");
 
-        repository.save(manufacturer);
+        return repository.save(manufacturer);
     }
 
     @Override
     public Page<Manufacturer> findAll(Pageable pageable) {
         return repository.findAll(pageable);
+    }
+
+    @Override
+    public Long count() {
+        return repository.count();
     }
 }

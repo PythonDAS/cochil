@@ -43,7 +43,7 @@ public class IngredientCntrl {
         return service.save(ingredient);
     }
 
-    @RequestMapping(value = "/count", method = RequestMethod.POST)
+    @RequestMapping(value = "/igCount", method = RequestMethod.POST)
     public String count() {
         return "Count: " + service.count();
     }

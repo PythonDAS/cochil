@@ -13,6 +13,6 @@ public class Manufacturer {
 
     @Id
     private String id;
-    private int nationalityCode;  // 0: 국내, 1: 해외.
     private String name;
+    private int nationalityCode;  // 0: 국내, 1: 해외.
 }

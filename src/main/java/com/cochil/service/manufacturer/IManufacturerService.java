@@ -8,7 +8,9 @@ import org.springframework.data.domain.Pageable;
  * Created by donghoon on 2016. 5. 24..
  */
 public interface IManufacturerService {
-    void save(Manufacturer ingredient);
+    Manufacturer save(Manufacturer ingredient);
 
     Page<Manufacturer> findAll(Pageable pageable);
+
+    Long count();
 }
