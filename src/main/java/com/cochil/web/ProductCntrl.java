@@ -1,8 +1,8 @@
 package com.cochil.web;
 
-import com.cochil.domain.manufacturer.Manufacturer;
-import com.cochil.domain.manufacturer.ManufacturerForm;
-import com.cochil.service.manufacturer.ManufacturerService;
+import com.cochil.domain.product.Product;
+import com.cochil.domain.product.ProductForm;
+import com.cochil.service.product.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -19,40 +19,40 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by donghoon on 2016. 5. 25..
+ * Created by donghoon on 2016. 5. 22..
  */
 @RestController
-@RequestMapping(value = "/manufacturer")
-public class ManufacturerCntrl {
+@RequestMapping(value = "/product")
+public class ProductCntrl {
 
-    private Logger logger = LoggerFactory.getLogger(ManufacturerCntrl.class);
+    private Logger logger = LoggerFactory.getLogger(ProductCntrl.class);
 
     @Autowired
-    private ManufacturerService service;
+    private ProductService service;
 
     @ModelAttribute
-    public ManufacturerForm setUpForm() {
-        return new ManufacturerForm();
+    public ProductForm setUpForm() {
+        return new ProductForm();
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public Manufacturer save(@Validated ManufacturerForm form, BindingResult result, Model model) {
+    public Product save(@Validated ProductForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
             List<ObjectError> errorList = result.getAllErrors();
             for (ObjectError error : errorList) {
                 logger.info(error.toString());
             }
-            logger.info("ManufacturerForm data has error...");
+            logger.info("ProductForm data has error...");
             return null;
         }
 
-        Manufacturer manufacturer = new Manufacturer();
-        BeanUtils.copyProperties(form, manufacturer);
+        Product product = new Product();
+        BeanUtils.copyProperties(form, product);
 
-        return service.save(manufacturer);
+        return service.save(product);
     }
 
-    @RequestMapping(value = "/mfCount", method = RequestMethod.POST)
+    @RequestMapping(value = "/prCount", method = RequestMethod.POST)
     public String count() {
         return "Count: " + service.count();
     }

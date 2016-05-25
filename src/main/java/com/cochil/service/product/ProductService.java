@@ -5,10 +5,12 @@ import com.cochil.persistance.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by donghoon on 2016. 5. 24..
  */
+@Service
 public class ProductService implements IProductService {
 
     @Autowired
@@ -20,15 +22,20 @@ public class ProductService implements IProductService {
      * @param product
      */
     @Override
-    public void save(Product product) {
+    public Product save(Product product) {
         if (product == null)
             throw new NullPointerException("product is null...");
 
-        repository.save(product);
+        return repository.save(product);
     }
 
     @Override
     public Page<Product> findAll(Pageable pageable) {
         return repository.findAll(pageable);
+    }
+
+    @Override
+    public Long count() {
+        return repository.count();
     }
 }

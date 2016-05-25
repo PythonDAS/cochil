@@ -16,6 +16,5 @@ public class ManufacturerForm {
     @NotNull
     @Size(min = 2, max = 30)
     private String name;
-    @NotNull
     private int nationalityCode;  // 0: 국내, 1: 해외.
 }

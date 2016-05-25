@@ -73,10 +73,50 @@ $(document).ready(function () {
                 })
             },
             error: function (error) {
-                console.log("성분 저장 실패.");
+                console.log("제조사 저장 실패.");
                 console.log(error);
                 if (error.responseText === "") {
                     $("#manufacturerName").attr("placeholder", "이름은 비어 있으면 안됩니다.");
+                }
+            }
+        })
+    });
+
+    $("#prSubmit").on("click", function () {
+        var productName = $("#productName").val();
+        var productCode = $(':radio[name="productCode"]:checked').val();
+        var ingredientList = $("#select-ingredient option:selected").val();
+        console.log("name: " + productName + ", productCode: " + productCode + ", ingredientList: " + ingredientList);
+
+        $.ajax({
+            type: "post",
+            url: "/product/save",
+            dataType: "json",
+            data: {
+                name: productName,
+                productCode: productCode,
+                ingredientList: ingredientList
+            },
+            success: function (response) {
+                console.log("상품 저장 성공.");
+                $("#productName").val("");
+                $("#productName").attr("placeholder", "ex) 어린이 2080");
+                console.log(response);
+
+                $.ajax({
+                    type: "post",
+                    url: "/product/prCount",
+                    success: function (response) {
+                        $("#productCount").text(response);
+                        console.log(response);
+                    }
+                })
+            },
+            error: function (error) {
+                console.log("상품 저장 실패.");
+                console.log(error);
+                if (error.responseText === "") {
+                    $("#productName").attr("placeholder", "이름은 비어 있으면 안됩니다.");
                 }
             }
         })

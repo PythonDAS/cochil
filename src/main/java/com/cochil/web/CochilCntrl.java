@@ -2,6 +2,7 @@ package com.cochil.web;
 
 import com.cochil.service.ingredient.IngredientService;
 import com.cochil.service.manufacturer.ManufacturerService;
+import com.cochil.service.product.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class CochilCntrl {
     private IngredientService igService;
     @Autowired
     private ManufacturerService mfService;
+    @Autowired
+    private ProductService prService;
 
     @RequestMapping("/")
     @ResponseBody
@@ -31,12 +34,15 @@ public class CochilCntrl {
 
     @RequestMapping("/inputData")
     public String inputData(Model model) {
-        String igCount = "Count: " + igService.count().toString();
-        String mfCount = "Count: " + mfService.count().toString();
+        String igCount = "ingredient count: " + igService.count().toString();
+        String mfCount = "manufacturer count: " + mfService.count().toString();
+        String prCount = "product count: " + prService.count().toString();
         model.addAttribute("igCount", igCount);
         model.addAttribute("mfCount", mfCount);
-        logger.info("ingredient count: {}", igCount);
-        logger.info("manufacturer count: {}", mfCount);
+        model.addAttribute("prCount", prCount);
+        logger.info("Count: {}", igCount);
+        logger.info("Count: {}", mfCount);
+        logger.info("Count: {}", prCount);
         return "input";
     }
 
