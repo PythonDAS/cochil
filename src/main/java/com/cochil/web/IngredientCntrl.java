@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by donghoon on 2016. 5. 22..
@@ -33,6 +36,10 @@ public class IngredientCntrl {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public Ingredient save(@Validated IngredientForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            List<ObjectError> errorList = result.getAllErrors();
+            for (ObjectError error : errorList) {
+                logger.info(error.toString());
+            }
             logger.info("IngredientForm data has error...");
             return null;
         }

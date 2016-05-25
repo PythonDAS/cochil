@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Cochil Data Input</title>
+    <title>Cochil Data List</title>
     <!-- Bootstrap core ` -->
     <link th:href="@{/static/node_modules/admin-lte/bootstrap/css/bootstrap.min.css}"
           href="../static/node_modules/admin-lte/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -12,6 +12,8 @@
           href="../static/node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css" rel="stylesheet"/>
     <link th:href="@{/static/node_modules/admin-lte/plugins/select2/select2.min.css}"
           href="../static/node_modules/admin-lte/plugins/select2/select2.min.css" rel="stylesheet"/>
+    <link th:href="@{/static/node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.css}"
+          href="../static/node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet"/>
     <link th:href="@{/static/node_modules/font-awesome/css/font-awesome.min.css}"
           href="../static/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
@@ -24,24 +26,24 @@
         <section class="content-header">
             <h1>
                 Cochil
-                <small>데이터 입력 폼</small>
+                <small>데이터 리스트</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#" class="active">Forms</a></li>
+                <li><a href="#" class="active">List</a></li>
             </ol>
         </section>
 
         <section class="content">
             <div class="row">
-                <div class="col-md-12" th:replace="fragments/form/ingredient_form :: ingredient_form"></div>
-                <!-- 성분 입력 폼 -->
+                <div class="col-md-12" th:replace="fragments/list/ingredient_list :: ingredient_list"></div>
+                <!-- 성분 리스트 -->
             </div>
             <div class="row">
-                <div class="col-md-6" th:replace="fragments/form/manufacturer_form :: manufacturer_form"></div>
-                <!-- 제조사 입력 폼 -->
-                <div class="col-md-6" th:replace="fragments/form/product_form :: product_form"></div>
-                <!-- 상품 입력 폼 -->
+                <!--<div class="col-md-6" th:replace="fragments/list/manufacturer_list :: manufacturer_list"></div>-->
+                <!-- 제조사 리스트 -->
+                <!--<div class="col-md-6" th:replace="fragments/list/product_list :: product_list"></div>-->
+                <!-- 상품 리스트 -->
             </div>
         </section>
     </div>
@@ -56,7 +58,7 @@
         src="../static/node_modules/admin-lte/dist/js/app.min.js"></script>
 <script th:src="@{/static/node_modules/admin-lte/plugins/select2/select2.full.min.js}"
         src="../static/node_modules/admin-lte/plugins/select2/select2.full.min.js"></script>
-<script th:src="@{/static/custom/js/data-input.js}"
-        src="../static/custom/js/data-input.js"></script>
+<script th:src="@{/static/node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.min.js}"
+        src="../static/node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.min.js"></script>
 </body>
 </html>
