@@ -19,6 +19,8 @@ $(document).ready(function () {
 
                 $("#ingredientName").val("");
                 $("#ingredientExplanation").val("");
+                $("#ingredientName").attr("placeholder", "ex) 자일리톨");
+                $("#ingredientExplanation").attr("placeholder", "ex) 자일리톨 성분은 ...");
                 console.log(response);
 
                 $.ajax({
@@ -57,6 +59,8 @@ $(document).ready(function () {
             },
             success: function (response) {
                 console.log("제조사 저장 성공.");
+                $("#manufacturerName").val("");
+                $("#manufacturerName").attr("placeholder", "ex) LG 화학");
                 console.log(response);
 
                 $.ajax({
