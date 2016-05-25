@@ -10,6 +10,8 @@
           href="../static/node_modules/admin-lte/dist/css/AdminLTE.min.css" rel="stylesheet"/>
     <link th:href="@{/static/node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css}"
           href="../static/node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css" rel="stylesheet"/>
+    <link th:href="@{/static/node_modules/admin-lte/plugins/select2/select2.min.css}"
+          href="../static/node_modules/admin-lte/plugins/select2/select2.min.css" rel="stylesheet"/>
     <link th:href="@{/static/node_modules/font-awesome/css/font-awesome.min.css}"
           href="../static/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
@@ -38,7 +40,8 @@
             <div class="row">
                 <div class="col-md-6" th:replace="fragments/form/manufacturer_form :: manufacturer_form"></div>
                 <!-- 제조사 입력 폼 -->
-                <div class="col-md-6"></div>
+                <div class="col-md-6" th:replace="fragments/form/product_form :: product_form"></div>
+                <!-- 상품 입력 폼 -->
             </div>
         </section>
     </div>
@@ -51,6 +54,8 @@
         src="../static/node_modules/admin-lte/bootstrap/js/bootstrap.min.js"></script>
 <script th:src="@{/static/node_modules/admin-lte/dist/js/app.min.js}"
         src="../static/node_modules/admin-lte/dist/js/app.min.js"></script>
+<script th:src="@{/static/node_modules/admin-lte/plugins/select2/select2.full.min.js}"
+        src="../static/node_modules/admin-lte/plugins/select2/select2.full.min.js"></script>
 <script th:src="@{/static/custom/js/data-input.js}"
         src="../static/custom/js/data-input.js"></script>
 </body>

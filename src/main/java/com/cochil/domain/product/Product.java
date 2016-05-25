@@ -16,8 +16,8 @@ public class Product {
 
     @Id
     private String id;
-    private ProductCnst productCode; // 0: 치약 1: 샴푸
     private String name;
+    private ProductCnst productCode; // 0: 치약 1: 샴푸
     private List<Ingredient> ingredientList;
 
 }

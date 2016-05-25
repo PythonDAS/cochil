@@ -80,6 +80,7 @@ $(document).ready(function () {
                 }
             }
         })
-
     });
+
+    $(".ingredient-multiple").select2();
 });
