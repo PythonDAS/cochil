@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div class="col-md-6" th:fragment="product_form">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">상품 입력 폼</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" action="#">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="productName">이름</label>
+                    <input type="text" class="form-control" id="productName"
+                           placeholder="ex) 어린이 2080"/>
+                </div>
+                <div class="form-group">
+                    <label>상품 종류</label><br/>
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="productCode" id="toothpaste" value="0"
+                                   checked=""/>
+                            toothpaste
+                        </label>
+                    </div>
+                    <div class="radio-inline">
+                        <label>
+                            <input type="radio" name="productCode" id="shampoo" value="1"/>
+                            shampoo
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select-ingredient">성분 선택</label>
+                    <select class="form-control select2 select2-hidden-accessible ingredient-multiple"
+                            multiple="multiple" data-placeholder="성분 이름" style="width: 100%;" tabindex="-1"
+                            aria-hidden="true" id="select-ingredient">
+                        <option>자일리톨</option>
+                        <option>불소</option>
+                        <option>덴탈타입실리카</option>
+                        <option>함수이산화규소</option>
+                        <option>플루오린화나트륨</option>
+                        <option>인불소인산나트륨</option>
+                        <option>파라벤</option>
+                    </select>
+                </div>
+                <!-- /.form-group -->
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary" id="prSubmit">저장</button>
+                    <span class="badge bg-aqua pull-right" th:text="${prCount}" id="productCount">0</span>
+                </div>
+                <!-- /.box-footer -->
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
