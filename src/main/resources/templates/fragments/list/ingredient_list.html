@@ -42,17 +42,12 @@
                                 <th class="sorting" tabindex="0" aria-controls="ingredient" rowspan="1" colspan="1"
                                     aria-label="Name: activate to sort column ascending" style="width: 207px;">Name
                                 </th>
-                                <th class="sorting" tabindex="0" aria-controls="ingredient" rowspan="1" colspan="1"
-                                    aria-label="Explanation: activate to sort column ascending" style="width: 156px;">
-                                    Explanation
-                                </th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr role="row" class="odd" th:each="ingredient : ${ingredients}">
                                 <td class="" th:text="${ingredient.id}">성분 아이디</td>
                                 <td class="sorting_1" th:text="${ingredient.name}">성분 이름</td>
-                                <td th:text="${ingredient.explanation}">성분 설명</td>
                             </tr>
                             </tbody>
                         </table>

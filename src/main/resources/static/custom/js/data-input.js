@@ -2,9 +2,12 @@
  * Created by donghoon on 2016. 5. 23..
  */
 $(document).ready(function () {
+    var editor = CKEDITOR.replace("ingredientEditor");
+    $(".ingredient-multiple").select2();
+
     $("#igSubmit").on("click", function () {
         var ingredientName = $("#ingredientName").val();
-        var ingredientExplanation = $("#ingredientExplanation").val();
+        var ingredientExplanation = editor.getData();
 
         $.ajax({
             type: "post",
@@ -18,9 +21,7 @@ $(document).ready(function () {
                 console.log("성분 저장 성공.");
 
                 $("#ingredientName").val("");
-                $("#ingredientExplanation").val("");
                 $("#ingredientName").attr("placeholder", "ex) 자일리톨");
-                $("#ingredientExplanation").attr("placeholder", "ex) 자일리톨 성분은 ...");
                 console.log(response);
 
                 $.ajax({
@@ -37,7 +38,6 @@ $(document).ready(function () {
                 console.log(error);
                 if (error.responseText === "") {
                     $("#ingredientName").attr("placeholder", "이름은 비어 있으면 안됩니다.");
-                    $("#ingredientExplanation").attr("placeholder", "내용은 비어 있으면 안됩니다.");
                 }
             }
         })
@@ -122,5 +122,4 @@ $(document).ready(function () {
         })
     });
 
-    $(".ingredient-multiple").select2();
 });
