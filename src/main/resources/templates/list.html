@@ -36,14 +36,16 @@
 
         <section class="content">
             <div class="row">
-                <div class="col-md-12" th:replace="fragments/list/ingredient_list :: ingredient_list"></div>
-                <!-- 성분 리스트 -->
+                <div th:replace="fragments/list/manufacturer_list :: manufacturer_list"></div>
+                <!-- 제조사 리스트 -->
             </div>
             <div class="row">
-                <!--<div class="col-md-6" th:replace="fragments/list/manufacturer_list :: manufacturer_list"></div>-->
-                <!-- 제조사 리스트 -->
-                <!--<div class="col-md-6" th:replace="fragments/list/product_list :: product_list"></div>-->
+                <div th:replace="fragments/list/product_list :: product_list"></div>
                 <!-- 상품 리스트 -->
+            </div>
+            <div class="row">
+                <div th:replace="fragments/list/ingredient_list :: ingredient_list"></div>
+                <!-- 성분 리스트 -->
             </div>
         </section>
     </div>

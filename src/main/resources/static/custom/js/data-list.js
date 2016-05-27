@@ -3,4 +3,6 @@
  */
 $(document).ready(function () {
     $("#ingredient").DataTable();
+    $("#manufacturer").DataTable();
+    $("#product").DataTable();
 });
